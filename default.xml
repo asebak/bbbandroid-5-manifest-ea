@@ -13,7 +13,7 @@
   <project name="bbbandroid-external-ti_android_utilities" path="external/ti_android_utilities" revision="master" remote="bbbandroid" />
 
   <!-- Modified BBBAndroid versions of AOSP repos (android-l) -->
-   <project path="build" name="bbbandroid-build-aosp-lollipop-ea" revision="master" remote="dondonnguyen" groups="pdk,tradefed" >
+   <project path="build" name="bbb-aosp-build-5.0.2_rc1" revision="master" remote="dondonnguyen" groups="pdk,tradefed" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
