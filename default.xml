@@ -17,7 +17,7 @@
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
-  <project name="bbbandroid-kernel-3.14-ea" path="kernel" revision="master" remote="dondonnguyen" />
+  <project name="bbbandroid-kernel" path="kernel" revision="master" remote="bbbandroid" />
 
   <!-- New repos for BBBAndroid -->
   <project name="bbbandroid-external-i2c_tools" path="external/i2c-tools" revision="master" remote="bbbandroid" />
