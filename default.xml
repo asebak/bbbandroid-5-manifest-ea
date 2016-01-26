@@ -3,15 +3,19 @@
 
   <remote fetch="git://github.com/hendersa/" name="bbbandroid"/>
   <remote fetch="git://github.com/dondonnguyen/" name="dondonnguyen"/>
+  <remote fetch="git://github.com/kconger/" name="kconger"/>
+  <remote fetch="git://github.com/asebak/" name="asebak"/>
 
   <!-- BBBAndroid kernel and bootloader repos -->
   <project name="bbbandroid-u-boot" path="u-boot" revision="master" remote="bbbandroid"/>
 
   <project name="arm-gnueabihf-4_8" path="prebuilts/gcc/linux-x86/arm/arm-gnueabihf-4.8" revision="master" remote="dondonnguyen" />
 
-  <!-- Modified BBBAndroid versions of Rowboat repos (rowboat-jb branch) -->
-  <project name="bbbandroid-vendor-ti-beagleboneblack-aosp-ea" path="device/ti/beagleboneblack" revision="master" remote="dondonnguyen" />
-
+  <!-- bsp -->
+  <project name="bbb-bt-wifi-bsp" path="device/ti/beagleboneblack" revision="master" remote="asebak" >
+    <copyfile dest="patch.sh" src="patches/patch.sh" />
+  </project>
+  
   <project name="bbbandroid-external-ti_android_utilities" path="external/ti_android_utilities" revision="master" remote="bbbandroid" />
 
   <!-- Modified BBBAndroid versions of AOSP repos (android-l) -->
@@ -20,6 +24,8 @@
   </project>
 
   <project name="bbbandroid-kernel" path="kernel" revision="master" remote="bbbandroid" />
+  <project name="backports-3.18.1-1" path="backports-3.18.1-1" revision="master" remote="kconger" />
+  <project name="sensortag" path="packages/apps/SensorTag" revision="sensortag-aosp" remote="asebak" />
 
   <!-- New repos for BBBAndroid -->
   <project name="bbbandroid-external-i2c_tools" path="external/i2c-tools" revision="master" remote="bbbandroid" />
