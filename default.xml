@@ -13,22 +13,24 @@
   <project name="bbbandroid-external-ti_android_utilities" path="external/ti_android_utilities" revision="master" remote="bbbandroid" />
 
   <!-- Modified BBBAndroid versions of AOSP repos (android-l) -->
-   <project path="build" name="bbb-aosp-build-5.0.2_rc1" revision="master" remote="dondonnguyen" groups="pdk,tradefed" >
+   <project path="build" name="bbb-aosp-build-5.0.2_rc1" revision="master" remote="asebak" groups="pdk,tradefed" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
-  <project name="bbbandroid-kernel" path="kernel" revision="master" remote="bbbandroid" />
+ <!-- linux kernel -->
+  <project name="bbbandroid-kernel" path="kernel" revision="master" remote="asebak">
+    <copyfile src="arch/arm/configs/am335x_evm_android_defconfig" dest="kernel/.config" />
+  </project>
   <project name="backports-3.18.1-1" path="backports-3.18.1-1" revision="master" remote="kconger" />
+  
   <project name="sensortag" path="packages/apps/SensorTag" revision="sensortag-aosp" remote="asebak" />
   <!-- bsp -->
-  <project name="bbb-bt-wifi-bsp" path="device/ti/beagleboneblack" revision="master" remote="asebak" >
-    <copyfile dest="patch.sh" src="patches/patch.sh" />
-  </project>
+  <project name="bbb-bt-wifi-bsp" path="device/ti/beagleboneblack" revision="master" remote="asebak" />
   <!-- New repos for BBBAndroid -->
   <project name="bbbandroid-external-i2c_tools" path="external/i2c-tools" revision="master" remote="bbbandroid" />
   <!-- Busybox -->
-  <remote  name="cyangenmod" fetch="https://github.com/CyanogenMod" />
-  <project path="external/busybox" name="android_external_busybox" remote="cyangenmod" revision="d5b63cca67f555cd6e4c9b48ce5b1569620f199e" />
+  <!--<remote  name="cyangenmod" fetch="https://github.com/CyanogenMod" />
+  <project path="external/busybox" name="android_external_busybox" remote="cyangenmod" revision="d5b63cca67f555cd6e4c9b48ce5b1569620f199e" /> -->
  <!-- Repos for BlueZ -->
  <remote name="gcode" fetch="https://code.google.com/p/"/>
   <remote name="korg" fetch="git://git.kernel.org/pub/scm/bluetooth/"/>
